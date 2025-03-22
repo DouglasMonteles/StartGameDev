@@ -1,0 +1,31 @@
+# Diretórios gerados automaticamente pelo Unity
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+[Uu]ser[Ss]ettings/
+MemoryCaptures/
+
+# Arquivos de cache e metadados locais
+*.csproj
+*.sln
+*.pidb
+*.suo
+*.user
+*.userprefs
+*.unityproj
+*.swp
+*.lock
+*.log
+*.tmp
+
+# Configurações específicas do Visual Studio e Rider
+.vscode/
+.idea/
+*.iml
+
+# Arquivos do sistema operacional
+.DS_Store
+Thumbs.db
