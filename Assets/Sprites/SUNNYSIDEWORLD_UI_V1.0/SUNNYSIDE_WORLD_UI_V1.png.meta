@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      SUNNYSIDE_WORLD_UI_V1_0: 2132571172737862412
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

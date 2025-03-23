@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      SUNNYSIDE_WORLD_CHIMNEYSMOKE_MOCKUP_0: -8319082957193539231
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
