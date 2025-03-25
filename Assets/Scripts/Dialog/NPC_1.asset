@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19bfa9117a22f434e9e7610001fee43f, type: 3}
+  m_Name: NPC_1
+  m_EditorClassIdentifier: 
+  actor: {fileID: 7869807542951108578, guid: cd5f4883de90e0e4a8d02f539b1d153f, type: 3}
+  speakerSprite: {fileID: 2709043465304614878, guid: 7e54e7ac842cd4f4aa02717d15f09141, type: 3}
+  sentence: "Ol\xE1, Mundo!"
+  dialogues: []
