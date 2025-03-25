@@ -13,6 +13,18 @@ MonoBehaviour:
   m_Name: NPC_1
   m_EditorClassIdentifier: 
   actor: {fileID: 7869807542951108578, guid: cd5f4883de90e0e4a8d02f539b1d153f, type: 3}
-  speakerSprite: {fileID: 2709043465304614878, guid: 7e54e7ac842cd4f4aa02717d15f09141, type: 3}
-  sentence: "Ol\xE1, Mundo!"
-  dialogues: []
+  speakerSprite: {fileID: 0}
+  sentence: 
+  dialogues:
+  - actorName: "Mo\xE7a"
+    profile: {fileID: 2709043465304614878, guid: 7e54e7ac842cd4f4aa02717d15f09141, type: 3}
+    sentence:
+      portuguese: "Oi, tudo b\xE3o?"
+      english: 
+      spanish: 
+  - actorName: "Mo\xE7a"
+    profile: {fileID: 2709043465304614878, guid: 7e54e7ac842cd4f4aa02717d15f09141, type: 3}
+    sentence:
+      portuguese: "T\xE1 perdido?"
+      english: 
+      spanish: 
