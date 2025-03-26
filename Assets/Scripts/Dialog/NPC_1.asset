@@ -20,11 +20,11 @@ MonoBehaviour:
     profile: {fileID: 2709043465304614878, guid: 7e54e7ac842cd4f4aa02717d15f09141, type: 3}
     sentence:
       portuguese: "Oi, tudo b\xE3o?"
-      english: 
-      spanish: 
+      english: hello
+      spanish: ola
   - actorName: "Mo\xE7a"
     profile: {fileID: 2709043465304614878, guid: 7e54e7ac842cd4f4aa02717d15f09141, type: 3}
     sentence:
       portuguese: "T\xE1 perdido?"
-      english: 
-      spanish: 
+      english: are you lost?
+      spanish: estas perdido?

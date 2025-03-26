@@ -5,6 +5,15 @@ using UnityEngine.UI;
 public class DialogueControl : MonoBehaviour
 {
 
+    [System.Serializable]
+    public enum Idiom {
+        PT_BR,
+        ENG,
+        SPA,
+    }
+
+    public Idiom language;
+
     public static DialogueControl INSTANCE;
 
     [Header("Components")]
@@ -54,7 +63,24 @@ public class DialogueControl : MonoBehaviour
 
     public void NextSentence()
     {
-
+        if (speechText.text == sentences[index])
+        {
+            if (index < sentences.Length - 1)
+            {
+                index++;
+                speechText.text = "";
+                StartCoroutine(TypeSentence());
+            }
+            else
+            {
+                // theres no more dialogue text
+                speechText.text = "";
+                index = 0;
+                dialogueObj.SetActive(false);
+                sentences = null;
+                isShowing = false;
+            }
+        }
     }
 
     public void Speech(string[] txt)

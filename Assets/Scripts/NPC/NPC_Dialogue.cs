@@ -38,7 +38,20 @@ public class NPC_Dialogue : MonoBehaviour
     {
         for (int i = 0; i < dialogSettings.dialogues.Count; i++)
         {
-            sentences.Add(dialogSettings.dialogues[i].sentence.portuguese);
+            switch (DialogueControl.INSTANCE.language)
+            {
+                case DialogueControl.Idiom.PT_BR:
+                    sentences.Add(dialogSettings.dialogues[i].sentence.portuguese);
+                    break;
+
+                case DialogueControl.Idiom.ENG:
+                    sentences.Add(dialogSettings.dialogues[i].sentence.english);
+                    break;
+
+                case DialogueControl.Idiom.SPA:
+                    sentences.Add(dialogSettings.dialogues[i].sentence.spanish);
+                    break;
+            }
         }
     }
 
@@ -53,7 +66,6 @@ public class NPC_Dialogue : MonoBehaviour
         else
         {
             playerHit = false;
-            DialogueControl.INSTANCE.dialogueObj.SetActive(false);
         }
     }
 
