@@ -1,10 +1,11 @@
 using System.Collections;
-using NUnit.Framework.Constraints;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class DialogueControl : MonoBehaviour
 {
+
+    public static DialogueControl INSTANCE;
 
     [Header("Components")]
     public GameObject dialogueObj;
@@ -23,6 +24,11 @@ public class DialogueControl : MonoBehaviour
     private int index;
 
     private string[] sentences;
+
+    void Awake()
+    {
+        INSTANCE = this;
+    }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()

@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class NPC_Dialogue : MonoBehaviour
@@ -7,21 +8,38 @@ public class NPC_Dialogue : MonoBehaviour
 
     public LayerMask playerLayer;
 
+    public DialogSettings dialogSettings;
+
+    private List<string> sentences = new List<string>();
+
+    bool playerHit;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        GetNPCInfo();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.E) && playerHit)
+        {
+            DialogueControl.INSTANCE.Speech(sentences.ToArray());
+        }
     }
 
     void FixedUpdate()
     {
         ShowDialogue();
+    }
+
+    void GetNPCInfo()
+    {
+        for (int i = 0; i < dialogSettings.dialogues.Count; i++)
+        {
+            sentences.Add(dialogSettings.dialogues[i].sentence.portuguese);
+        }
     }
 
     void ShowDialogue()
@@ -30,11 +48,12 @@ public class NPC_Dialogue : MonoBehaviour
 
         if (hit != null)
         {
-            Debug.Log("Player enters in dialogue area");
+            playerHit = true;
         }
         else
         {
-
+            playerHit = false;
+            DialogueControl.INSTANCE.dialogueObj.SetActive(false);
         }
     }
 
