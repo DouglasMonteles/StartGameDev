@@ -28,7 +28,8 @@ public class DialogueControl : MonoBehaviour
     [Header("Settings")]
     public float typingSpeed;
 
-    private bool isShowing;
+    [HideInInspector]
+    public bool isShowing;
 
     private int index;
 
