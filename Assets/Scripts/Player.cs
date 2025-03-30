@@ -38,6 +38,10 @@ public class Player : MonoBehaviour
         set { _isRunning = value; }
     }
 
+    private bool _isCutting;
+
+    public bool isCutting { get => _isCutting; set => _isCutting = value; }
+
     void Start()
     {
         rig = GetComponent<Rigidbody2D>();  
@@ -49,6 +53,7 @@ public class Player : MonoBehaviour
         OnInput();
         OnRun();
         OnRolling();
+        OnCutting();
     }
 
     void FixedUpdate()
@@ -97,6 +102,23 @@ public class Player : MonoBehaviour
         {
             speed = initialSpeed;
             _isRolling = false;
+        }
+    }
+
+    void OnCutting()
+    {
+        const int MOUSE_LEFT_BUTTON = 0;
+
+        if (Input.GetMouseButtonDown(MOUSE_LEFT_BUTTON))
+        {
+            _isCutting = true;
+            speed = 0;
+        }
+
+        if (Input.GetMouseButtonUp(MOUSE_LEFT_BUTTON))
+        {
+            _isCutting = false;
+            speed = initialSpeed;
         }
     }
 
