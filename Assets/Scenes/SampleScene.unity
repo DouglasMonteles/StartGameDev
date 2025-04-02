@@ -5321,6 +5321,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   treeHealth: 5
   animator: {fileID: 565719996}
+  woodPrefab: {fileID: 7769594934422544798, guid: c7b52c8504ad5e04982643f9db042c41, type: 3}
+  totalWood: 3
 --- !u!50 &565720000
 Rigidbody2D:
   serializedVersion: 5
@@ -33343,9 +33345,10 @@ GameObject:
   - component: {fileID: 640618302}
   - component: {fileID: 640618301}
   - component: {fileID: 640618303}
+  - component: {fileID: 640618304}
   m_Layer: 8
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -33543,6 +33546,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 748b12b77f9cca54d83639d63ca6376a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &640618304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 640618296}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f8a6463067592e44bf4b51af7844d75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  totalWood: 0
 --- !u!1 &783612323
 GameObject:
   m_ObjectHideFlags: 0
@@ -36153,63 +36169,6 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 565720000}
   m_SourcePrefab: {fileID: 100100000, guid: 3dad460b8470f3b40ba56c2eced782b1, type: 3}
---- !u!1001 &2247960534675067471
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1130454346019582062, guid: c7b52c8504ad5e04982643f9db042c41, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 4.098665
-      objectReference: {fileID: 0}
-    - target: {fileID: 1130454346019582062, guid: c7b52c8504ad5e04982643f9db042c41, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 6.7548966
-      objectReference: {fileID: 0}
-    - target: {fileID: 1130454346019582062, guid: c7b52c8504ad5e04982643f9db042c41, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1130454346019582062, guid: c7b52c8504ad5e04982643f9db042c41, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1130454346019582062, guid: c7b52c8504ad5e04982643f9db042c41, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1130454346019582062, guid: c7b52c8504ad5e04982643f9db042c41, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1130454346019582062, guid: c7b52c8504ad5e04982643f9db042c41, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1130454346019582062, guid: c7b52c8504ad5e04982643f9db042c41, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1130454346019582062, guid: c7b52c8504ad5e04982643f9db042c41, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1130454346019582062, guid: c7b52c8504ad5e04982643f9db042c41, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7769594934422544798, guid: c7b52c8504ad5e04982643f9db042c41, type: 3}
-      propertyPath: m_Name
-      value: Wood
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: c7b52c8504ad5e04982643f9db042c41, type: 3}
 --- !u!1001 &7276361648001274551
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -36327,4 +36286,3 @@ SceneRoots:
   - {fileID: 1628372012}
   - {fileID: 605534725}
   - {fileID: 1639774511734570712}
-  - {fileID: 2247960534675067471}

@@ -9,6 +9,12 @@ public class Tree : MonoBehaviour
     [SerializeField]
     private Animator animator;
 
+    [SerializeField]
+    private GameObject woodPrefab;
+
+    [SerializeField]
+    private int totalWood;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -31,6 +37,10 @@ public class Tree : MonoBehaviour
 
         if (treeHealth <= 0)
         {
+            for (int i = 0; i < totalWood; i++)
+            {
+                Instantiate(woodPrefab, transform.position + new Vector3(Random.Range(-1f, 0.5f), Random.Range(-1f, 0.5f), 0f), transform.rotation);
+            }
             animator.SetTrigger("cut");
         }
     }
