@@ -15,6 +15,9 @@ public class Tree : MonoBehaviour
     [SerializeField]
     private int totalWood;
 
+    [SerializeField]
+    private ParticleSystem leafs;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -32,6 +35,8 @@ public class Tree : MonoBehaviour
         treeHealth--;
 
         animator.SetTrigger("isHit");
+
+        leafs.Play();
 
         Debug.Log("on hit");
 
