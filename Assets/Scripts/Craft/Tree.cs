@@ -18,6 +18,8 @@ public class Tree : MonoBehaviour
     [SerializeField]
     private ParticleSystem leafs;
 
+    private bool isCut;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -47,12 +49,14 @@ public class Tree : MonoBehaviour
                 Instantiate(woodPrefab, transform.position + new Vector3(Random.Range(-1f, 0.5f), Random.Range(-1f, 0.5f), 0f), transform.rotation);
             }
             animator.SetTrigger("cut");
+
+            isCut = true;
         }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Axe"))
+        if (collision.CompareTag("Axe") && !isCut)
         {
             OnHit();
         }
