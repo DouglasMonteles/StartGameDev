@@ -42,6 +42,12 @@ public class Player : MonoBehaviour
 
     public bool isCutting { get => _isCutting; set => _isCutting = value; }
 
+    private int handleObj;
+
+    private bool _isDigging;
+
+    public bool IsDigging { get => _isDigging; set => _isDigging = value; }
+
     void Start()
     {
         rig = GetComponent<Rigidbody2D>();  
@@ -50,10 +56,21 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            handleObj = 1;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            handleObj = 2;
+        }
+
         OnInput();
         OnRun();
         OnRolling();
         OnCutting();
+        OnDig();
     }
 
     void FixedUpdate()
@@ -107,18 +124,41 @@ public class Player : MonoBehaviour
 
     void OnCutting()
     {
-        const int MOUSE_LEFT_BUTTON = 0;
-
-        if (Input.GetMouseButtonDown(MOUSE_LEFT_BUTTON))
+        if (handleObj == 1)
         {
-            _isCutting = true;
-            speed = 0;
+            const int MOUSE_LEFT_BUTTON = 0;
+
+            if (Input.GetMouseButtonDown(MOUSE_LEFT_BUTTON))
+            {
+                _isCutting = true;
+                speed = 0;
+            }
+
+            if (Input.GetMouseButtonUp(MOUSE_LEFT_BUTTON))
+            {
+                _isCutting = false;
+                speed = initialSpeed;
+            }
         }
+    }
 
-        if (Input.GetMouseButtonUp(MOUSE_LEFT_BUTTON))
+    void OnDig()
+    {
+        if (handleObj == 2)
         {
-            _isCutting = false;
-            speed = initialSpeed;
+            const int MOUSE_LEFT_BUTTON = 0;
+
+            if (Input.GetMouseButtonDown(MOUSE_LEFT_BUTTON))
+            {
+                _isDigging = true;
+                speed = 0;
+            }
+
+            if (Input.GetMouseButtonUp(MOUSE_LEFT_BUTTON))
+            {
+                _isDigging = false;
+                speed = initialSpeed;
+            }
         }
     }
 
