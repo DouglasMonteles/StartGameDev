@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class SlotFarm : MonoBehaviour
 {
+    [Header("Components")]
 
     [SerializeField]
     private SpriteRenderer spriteRender;
@@ -12,21 +13,54 @@ public class SlotFarm : MonoBehaviour
     [SerializeField]
     private Sprite carrot;
 
+    [Header("Settings")]
+
     [SerializeField]
     private int digAmount;
 
+    [SerializeField]
+    private bool waterDetecting;
+
+    [SerializeField]
+    private float waterAmount;
+
+    private float currentWater;
+
     private int initialDigAmount;
+
+    private bool dugHole;
+
+    private PlayerItems playerItems;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        playerItems = FindFirstObjectByType<PlayerItems>();
         initialDigAmount = digAmount;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (dugHole)
+        {
+            if (waterDetecting)
+            {
+                currentWater += 0.01f;
+            }
+
+            if (currentWater >= waterAmount)
+            {
+                spriteRender.sprite = carrot;
+
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    spriteRender.sprite = hole;
+                    playerItems.Carrots++;
+                    currentWater = 0;
+                }
+            }
+        }
     }
 
     public void OnHit()
@@ -36,11 +70,7 @@ public class SlotFarm : MonoBehaviour
         if (digAmount <= initialDigAmount / 2)
         {
             spriteRender.sprite = hole;
-        }
-
-        if (digAmount <= 0)
-        {
-            spriteRender.sprite = carrot;
+            dugHole = true;
         }
     }
 
@@ -49,7 +79,20 @@ public class SlotFarm : MonoBehaviour
         if (collision.CompareTag("Dig"))
         {
             OnHit();
+        }
+
+        if (collision.CompareTag("Water"))
+        {
+            waterDetecting = true;
         }   
+    }
+
+    void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Water"))
+        {
+            waterDetecting = false;
+        }
     }
 
 }
