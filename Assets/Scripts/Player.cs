@@ -42,6 +42,7 @@ public class Player : MonoBehaviour
 
     public bool isCutting { get => _isCutting; set => _isCutting = value; }
 
+    [HideInInspector]
     private int handleObj;
 
     private bool _isDigging;
@@ -51,6 +52,8 @@ public class Player : MonoBehaviour
     private bool _isWatering;
 
     public bool IsWatering { get => _isWatering; set => _isWatering = value; }
+    
+    public int HandleObj { get => handleObj; set => handleObj = value; }
 
     private PlayerItems playerItems;
 
@@ -65,17 +68,17 @@ public class Player : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            handleObj = 1;
+            HandleObj = 1;
         }
 
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
-            handleObj = 2;
+            HandleObj = 2;
         }
 
         if (Input.GetKeyDown(KeyCode.Alpha3))
         {
-            handleObj = 3;
+            HandleObj = 3;
         }
 
         OnInput();
@@ -137,7 +140,7 @@ public class Player : MonoBehaviour
 
     void OnCutting()
     {
-        if (handleObj == 1)
+        if (HandleObj == 1)
         {
             const int MOUSE_LEFT_BUTTON = 0;
 
@@ -157,7 +160,7 @@ public class Player : MonoBehaviour
 
     void OnDig()
     {
-        if (handleObj == 2)
+        if (HandleObj == 2)
         {
             const int MOUSE_LEFT_BUTTON = 0;
 
@@ -177,7 +180,7 @@ public class Player : MonoBehaviour
 
     void OnWatering()
     {
-        if (handleObj == 3)
+        if (HandleObj == 3)
         {
             const int MOUSE_LEFT_BUTTON = 0;
 

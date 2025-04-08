@@ -4,7 +4,7 @@ public class PlayerItems : MonoBehaviour
 {
     [Header("Limit")]
     public const float WATER_LIMIT = 50;
-    public const float CARROTS_LIMIT = 5;
+    public const float CARROTS_LIMIT = 50;
     public const float WOOD_LIMIT = 5;
 
     [Header("Amount")]
