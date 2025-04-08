@@ -2,7 +2,12 @@ using UnityEngine;
 
 public class PlayerItems : MonoBehaviour
 {
-    private const float WATER_LIMIT = 50;
+    [Header("Limit")]
+    public const float WATER_LIMIT = 50;
+    public const float CARROTS_LIMIT = 5;
+    public const float WOOD_LIMIT = 5;
+
+    [Header("Amount")]
 
     [SerializeField]
     private int totalWood;

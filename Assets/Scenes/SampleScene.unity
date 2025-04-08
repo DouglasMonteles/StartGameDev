@@ -502,7 +502,7 @@ GameObject:
   - component: {fileID: 102551863}
   - component: {fileID: 102551862}
   m_Layer: 5
-  m_Name: Image
+  m_Name: carrotBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -552,7 +552,7 @@ MonoBehaviour:
   m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 0
-  m_FillAmount: 0
+  m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
@@ -565,6 +565,53 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 102551860}
   m_CullTransparentMesh: 1
+--- !u!1 &114288288
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 114288290}
+  - component: {fileID: 114288289}
+  m_Layer: 0
+  m_Name: Hud Controller
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &114288289
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 114288288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd95bd56dfbaa6948b5651e0a7ca9a78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waterBarUI: {fileID: 483806115}
+  carrotBarUI: {fileID: 102551862}
+  woodBarUI: {fileID: 760482611}
+--- !u!4 &114288290
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 114288288}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 189.77998, y: 536.6045, z: 0.13287151}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &155921290
 GameObject:
   m_ObjectHideFlags: 0
@@ -6233,7 +6280,7 @@ GameObject:
   - component: {fileID: 483806116}
   - component: {fileID: 483806115}
   m_Layer: 5
-  m_Name: Image
+  m_Name: waterBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6283,7 +6330,7 @@ MonoBehaviour:
   m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 0
-  m_FillAmount: 0
+  m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
@@ -35412,7 +35459,7 @@ GameObject:
   - component: {fileID: 760482612}
   - component: {fileID: 760482611}
   m_Layer: 5
-  m_Name: Image
+  m_Name: woodBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -35462,7 +35509,7 @@ MonoBehaviour:
   m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 0
-  m_FillAmount: 0
+  m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
@@ -39378,3 +39425,4 @@ SceneRoots:
   - {fileID: 1639774511734570712}
   - {fileID: 2494541564840514304}
   - {fileID: 417735397}
+  - {fileID: 114288290}
