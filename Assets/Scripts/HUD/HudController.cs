@@ -16,6 +16,9 @@ public class NewMonoBehaviourScript : MonoBehaviour
     [SerializeField]
     private Image woodBarUI;
 
+    [SerializeField]
+    private Image fishBarUI;
+
     [Header("Tools")]
 
     // [SerializeField]
@@ -51,6 +54,7 @@ public class NewMonoBehaviourScript : MonoBehaviour
         waterBarUI.fillAmount = 0f;
         carrotBarUI.fillAmount = 0f;
         woodBarUI.fillAmount = 0f;
+        fishBarUI.fillAmount = 0f;
     }
 
     // Update is called once per frame
@@ -59,6 +63,7 @@ public class NewMonoBehaviourScript : MonoBehaviour
         waterBarUI.fillAmount = playerItems.CurrentWater / PlayerItems.WATER_LIMIT;
         carrotBarUI.fillAmount = playerItems.Carrots / PlayerItems.CARROTS_LIMIT;
         woodBarUI.fillAmount = playerItems.TotalWood / PlayerItems.WOOD_LIMIT;
+        fishBarUI.fillAmount = playerItems.Fish / PlayerItems.FISH_LIMIT;
 
         // toolsUI[player.HandleObj - 1].color = selectColor;
 
