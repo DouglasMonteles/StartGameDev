@@ -27,6 +27,8 @@ public class PlayerItems : MonoBehaviour
     public float CurrentWater { get => currentWater; set => currentWater = value; }
     
     public int Carrots { get => carrots; set => carrots = value; }
+    
+    public int Fish { get => fish; set => fish = value; }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()

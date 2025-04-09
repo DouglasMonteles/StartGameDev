@@ -3,6 +3,9 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+
+    public bool isPaused;
+
     [SerializeField]
     private float speed;
     
@@ -66,6 +69,11 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
+        if (isPaused)
+        {
+            return;
+        }
+
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             HandleObj = 1;
@@ -91,6 +99,11 @@ public class Player : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (isPaused)
+        {
+            return;
+        }
+        
         OnMove();
     }
 

@@ -10889,7 +10889,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94e0ef15500518342be1edafb2a4f68f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  percentage: 50
+  percentage: 80
+  fishPrefab: {fileID: 7752072507139763073, guid: b6a1dcb03d51eea4188101ca91071922, type: 3}
 --- !u!1 &592359563
 GameObject:
   m_ObjectHideFlags: 0
@@ -35417,6 +35418,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18b4d4dbbf7084d4d9ece84dfbc1dab8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isPaused: 0
   speed: 5
   runSpeed: 10
   rollingSpeed: 10

@@ -7,11 +7,14 @@ public class PlayerAnimation : MonoBehaviour
 
     private Animator animator;
 
+    private Casting casting;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         player = GetComponent<Player>();
         animator = GetComponent<Animator>();
+        casting = FindFirstObjectByType<Casting>();
     }
 
     // Update is called once per frame
@@ -71,6 +74,18 @@ public class PlayerAnimation : MonoBehaviour
         {
             animator.SetInteger("transition", 2);
         }
+    }
+
+    public void OnCastingStarted()
+    {
+        animator.SetTrigger("isCasting");
+        player.isPaused = true;
+    }
+
+    public void OnCastingEnded()
+    {
+        casting.OnCasting();
+        player.isPaused = false;
     }
 
     #endregion
