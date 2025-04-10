@@ -18,6 +18,9 @@ public class House : MonoBehaviour
     [SerializeField]
     private Transform point;
 
+    [SerializeField]
+    private GameObject houseCollider;
+
     private bool detectingPlayer;
 
     private float timeCount;
@@ -61,6 +64,7 @@ public class House : MonoBehaviour
                 playerAnimation.OnHammeringEnded();
                 houseSprite.color = endColor;
                 player.isPaused = false;
+                houseCollider.SetActive(true);
             }
         }
     }
