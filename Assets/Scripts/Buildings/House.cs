@@ -3,8 +3,10 @@ using UnityEngine;
 public class House : MonoBehaviour
 {
 
+    [Header("Amounts")]
+
     [SerializeField]
-    private SpriteRenderer houseSprite;
+    private int woodAmount;
 
     [SerializeField]
     private Color startColor;
@@ -14,6 +16,11 @@ public class House : MonoBehaviour
 
     [SerializeField]
     private float timeAmount;
+
+    [Header("Components")]
+
+    [SerializeField]
+    private SpriteRenderer houseSprite;
 
     [SerializeField]
     private Transform point;
@@ -31,10 +38,13 @@ public class House : MonoBehaviour
 
     private PlayerAnimation playerAnimation;
 
+    private PlayerItems playerItems;
+
     void Awake()
     {
         player = FindFirstObjectByType<Player>();
         playerAnimation = player.GetComponent<PlayerAnimation>();
+        playerItems = player.GetComponent<PlayerItems>();
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -46,13 +56,15 @@ public class House : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (detectingPlayer && Input.GetKeyDown(KeyCode.E))
+        if (detectingPlayer && Input.GetKeyDown(KeyCode.E) && playerItems.TotalWood >= woodAmount)
         {
             isBeginning = true;
             playerAnimation.OnHammeringStarted();
             houseSprite.color = startColor;
             player.transform.position = point.position;
             player.isPaused = true;
+
+            playerItems.TotalWood -= woodAmount;
         }
 
         if (isBeginning)

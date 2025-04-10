@@ -39608,10 +39608,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8833d8f0395c34e4aaf27edba4d3a40b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  houseSprite: {fileID: 1008990999}
+  woodAmount: 2
   startColor: {r: 1, g: 1, b: 1, a: 0.39215687}
   endColor: {r: 1, g: 1, b: 1, a: 1}
   timeAmount: 5
+  houseSprite: {fileID: 1008990999}
   point: {fileID: 1753776578}
   houseCollider: {fileID: 996655014}
 --- !u!61 &1772156973
