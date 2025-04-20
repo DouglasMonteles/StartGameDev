@@ -3,6 +3,16 @@ using UnityEngine;
 public class PlayerAnimation : MonoBehaviour
 {
 
+    [Header("Attack Settings")]
+    [SerializeField]
+    private Transform attackPoint;
+
+    [SerializeField]
+    private float radius;
+
+    [SerializeField]
+    private LayerMask enemyLayer;
+
     private Player player;
 
     private Animator animator;
@@ -121,6 +131,25 @@ public class PlayerAnimation : MonoBehaviour
             animator.SetTrigger("hurt");
             isHurt = true;
         }
+    }
+
+    #endregion
+
+    #region Attack
+
+    public void OnAttack()
+    {
+        Collider2D hit = Physics2D.OverlapCircle(attackPoint.position, radius, enemyLayer);
+
+        if (hit != null)
+        {
+            Debug.Log("enemy");
+        }
+    }
+
+    void OnDrawGizmosSelected()
+    {
+        Gizmos.DrawWireSphere(attackPoint.position, radius);
     }
 
     #endregion
