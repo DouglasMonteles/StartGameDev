@@ -2,6 +2,14 @@ using UnityEngine;
 
 public class AnimationControl : MonoBehaviour
 {
+
+    private Animator animator;
+
+    void Awake()
+    {
+        animator = GetComponent<Animator>();
+    }
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -12,5 +20,10 @@ public class AnimationControl : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void PlayAnimation(int value)
+    {
+        animator.SetInteger("transition", value);
     }
 }
