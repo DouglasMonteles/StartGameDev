@@ -14,9 +14,12 @@ public class AnimationControl : MonoBehaviour
 
     private Animator animator;
 
+    private PlayerAnimation playerAnimation;
+
     void Awake()
     {
         animator = GetComponent<Animator>();
+        playerAnimation = FindFirstObjectByType<PlayerAnimation>();
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -42,7 +45,7 @@ public class AnimationControl : MonoBehaviour
 
         if (hit != null)
         {
-            Debug.Log("attack");
+            playerAnimation.OnHurt();
         }
         else
         {

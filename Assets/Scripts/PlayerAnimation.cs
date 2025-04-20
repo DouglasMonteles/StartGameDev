@@ -9,6 +9,11 @@ public class PlayerAnimation : MonoBehaviour
 
     private Casting casting;
 
+    private bool isHurt;
+
+    private float countDown;
+    private float recoveryTime = 1.5f;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -22,6 +27,17 @@ public class PlayerAnimation : MonoBehaviour
     {
         OnMove();
         OnRun();
+
+        if (isHurt)
+        {
+            countDown += Time.deltaTime;
+
+            if (countDown >= recoveryTime)
+            {
+                isHurt = false;
+                countDown = 0;
+            }
+        }
     }
 
     #region Moviment
@@ -96,6 +112,15 @@ public class PlayerAnimation : MonoBehaviour
     public void OnHammeringEnded()
     {
         animator.SetBool("hammering", false);
+    }
+
+    public void OnHurt()
+    {
+        if (!isHurt)
+        {
+            animator.SetTrigger("hurt");
+            isHurt = true;
+        }
     }
 
     #endregion
