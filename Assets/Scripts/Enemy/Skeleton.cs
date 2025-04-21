@@ -1,9 +1,21 @@
+using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
 
 public class Skeleton : MonoBehaviour
 {
 
+    [Header("Stats")]
+    public float currentHealth;
+
+    public Image healthBar;
+
+    public float totalHealth;
+
+    public bool isDead;
+    
+    [Header("Components")]
     [SerializeField]
     private NavMeshAgent agent;
 
@@ -12,9 +24,11 @@ public class Skeleton : MonoBehaviour
 
     private Player player;
 
+
     void Awake()
     {
         player = FindFirstObjectByType<Player>();
+        currentHealth = totalHealth;
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -27,6 +41,11 @@ public class Skeleton : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (isDead)
+        {
+            return;
+        }
+        
         agent.SetDestination(player.transform.position);
 
         if (Vector2.Distance(transform.position, player.transform.position) <= agent.stoppingDistance)

@@ -143,7 +143,7 @@ public class PlayerAnimation : MonoBehaviour
 
         if (hit != null)
         {
-            Debug.Log("enemy");
+            hit.GetComponentInChildren<AnimationControl>().OnHit();
         }
     }
 
