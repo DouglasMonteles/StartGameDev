@@ -35894,7 +35894,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPaused: 0
-  speed: 5
+  speed: 3
   runSpeed: 10
   rollingSpeed: 10
 --- !u!95 &640618302
