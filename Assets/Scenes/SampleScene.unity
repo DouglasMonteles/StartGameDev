@@ -33658,7 +33658,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPaused: 0
-  speed: 3
+  speed: 5
   runSpeed: 10
   rollingSpeed: 10
 --- !u!95 &640618302
@@ -38492,6 +38492,18 @@ PrefabInstance:
     - target: {fileID: 6557856851317152340, guid: a3f8ed2b335604545bcbb62b097daebc, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7383244673984343272, guid: a3f8ed2b335604545bcbb62b097daebc, type: 3}
+      propertyPath: radius
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7383244673984343272, guid: a3f8ed2b335604545bcbb62b097daebc, type: 3}
+      propertyPath: playerLayer.m_Bits
+      value: 256
+      objectReference: {fileID: 0}
+    - target: {fileID: 7680243056641217670, guid: a3f8ed2b335604545bcbb62b097daebc, type: 3}
+      propertyPath: m_Speed
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8034281785560184800, guid: a3f8ed2b335604545bcbb62b097daebc, type: 3}
       propertyPath: m_Name
