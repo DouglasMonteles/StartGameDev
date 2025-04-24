@@ -40,9 +40,12 @@ public class DialogueControl : MonoBehaviour
 
     private List<Sprite> actorSprites;
 
+    private Player player;
+
     void Awake()
     {
         INSTANCE = this;
+        player = FindFirstObjectByType<Player>();
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -87,6 +90,8 @@ public class DialogueControl : MonoBehaviour
                 dialogueObj.SetActive(false);
                 sentences = null;
                 isShowing = false;
+
+                player.isPaused = false;
             }
         }
     }
@@ -107,6 +112,8 @@ public class DialogueControl : MonoBehaviour
 
             StartCoroutine(TypeSentence());
             isShowing = true;
+
+            player.isPaused = true;
         }
     }
 
