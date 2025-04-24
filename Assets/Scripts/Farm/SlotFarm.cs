@@ -43,6 +43,8 @@ public class SlotFarm : MonoBehaviour
 
     private bool plantedCarrot;
 
+    private bool isPlayerNextToObject;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -68,7 +70,7 @@ public class SlotFarm : MonoBehaviour
                 plantedCarrot = true;
             }
 
-            if (Input.GetKeyDown(KeyCode.E) && plantedCarrot)
+            if (Input.GetKeyDown(KeyCode.E) && plantedCarrot && isPlayerNextToObject)
             {
                 audioSource.PlayOneShot(carrotSFX);
                 spriteRender.sprite = hole;
@@ -99,7 +101,12 @@ public class SlotFarm : MonoBehaviour
         if (collision.CompareTag("Water"))
         {
             waterDetecting = true;
-        }   
+        }  
+
+        if (collision.CompareTag("Player"))
+        {
+            isPlayerNextToObject = true;
+        } 
     }
 
     void OnTriggerExit2D(Collider2D collision)
@@ -107,6 +114,11 @@ public class SlotFarm : MonoBehaviour
         if (collision.CompareTag("Water"))
         {
             waterDetecting = false;
+        }
+
+        if (collision.CompareTag("Player"))
+        {
+            isPlayerNextToObject = false;
         }
     }
 
