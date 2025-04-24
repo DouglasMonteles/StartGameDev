@@ -12,6 +12,10 @@ public class NPC_Dialogue : MonoBehaviour
 
     private List<string> sentences = new List<string>();
 
+    private List<string> actorNames = new List<string>();
+
+    private List<Sprite> actorSprites = new List<Sprite>();
+
     bool playerHit;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -25,7 +29,7 @@ public class NPC_Dialogue : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E) && playerHit)
         {
-            DialogueControl.INSTANCE.Speech(sentences.ToArray());
+            DialogueControl.INSTANCE.Speech(sentences.ToArray(), actorNames, actorSprites);
         }
     }
 
@@ -52,6 +56,9 @@ public class NPC_Dialogue : MonoBehaviour
                     sentences.Add(dialogSettings.dialogues[i].sentence.spanish);
                     break;
             }
+
+            actorNames.Add(dialogSettings.dialogues[i].actorName);
+            actorSprites.Add(dialogSettings.dialogues[i].profile);
         }
     }
 

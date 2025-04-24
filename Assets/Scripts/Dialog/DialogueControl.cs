@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -35,6 +36,10 @@ public class DialogueControl : MonoBehaviour
 
     private string[] sentences;
 
+    private List<string> actorNames;
+
+    private List<Sprite> actorSprites;
+
     void Awake()
     {
         INSTANCE = this;
@@ -69,6 +74,7 @@ public class DialogueControl : MonoBehaviour
             if (index < sentences.Length - 1)
             {
                 index++;
+
                 speechText.text = "";
                 StartCoroutine(TypeSentence());
             }
@@ -76,6 +82,7 @@ public class DialogueControl : MonoBehaviour
             {
                 // theres no more dialogue text
                 speechText.text = "";
+                actorNameText.text = "";
                 index = 0;
                 dialogueObj.SetActive(false);
                 sentences = null;
@@ -84,13 +91,19 @@ public class DialogueControl : MonoBehaviour
         }
     }
 
-    public void Speech(string[] txt)
+    public void Speech(string[] txt, List<string> actorNames, List<Sprite> actorProfiles)
     {
         if (!isShowing)
         {
             // dialogue box
             dialogueObj.SetActive(true);
             sentences = txt;
+
+            this.actorNames = actorNames;
+            actorSprites = actorProfiles;
+
+            profileSprite.sprite = actorSprites[index];
+            actorNameText.text = actorNames[index];
 
             StartCoroutine(TypeSentence());
             isShowing = true;
